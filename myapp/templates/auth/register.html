@@ -1,0 +1,55 @@
+{% include 'layouts/app.html' %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-warning">
+  <div class="container-fluid" style="height: 50px;">
+      
+        
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 150px;">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <div class="card">
+              <div class="card-body">
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <h2 class="text-muted">Register</h2>
+        <form action="/register/" method="POST" >
+              {%   csrf_token  %}
+              <div class="form-group">
+                <label for="{{form.username.id_for_label}}">Username:</label>
+                <input type="text" name="{{form.username.name }}" class="form-control" value="{{form.username.alue}}">
+                <span class="text-danger">{{form.username.errors}}</span>
+
+              </div>
+              <div class="form-group">
+                <label for="{{form.password1.id_for_label}}">Password:</label>
+                <input type="password" name="{{form.password1.name }}" class="form-control" value="{{form.password1.alue}}">
+                <span class="text-danger">{{form.password1.errors}}</span>
+
+              </div>
+
+              <div class="form-group">
+                <label for="{{form.password2.id_for_label}}">Re-type Password:</label>
+                <input type="password" name="{{form.password2.name }}" class="form-control" value="{{form.password2.alue}}">
+                <span class="text-danger">{{form.password2.errors}}</span>
+
+              </div>
+
+              <button type="submit" class="btn btn-dark">Submit</button>
+
+        </form>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock%}
